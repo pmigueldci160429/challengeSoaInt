@@ -22,7 +22,7 @@ public class LoggerFileImpl implements LoggerInterface {
 	@Override
 	public void loggerBuild(String message) {
 		try {
-            String ruta = "D:/loggerFile.txt";
+            String ruta = filePath+"loggerFile.txt";
             File file = new File(ruta);
             
             if (!file.exists()) {
