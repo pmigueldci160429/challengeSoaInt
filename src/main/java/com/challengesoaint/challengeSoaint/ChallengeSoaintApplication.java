@@ -1,24 +1,25 @@
 package com.challengesoaint.challengeSoaint;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import service.impl.LoggerConsoleImpl;
 import service.impl.LoggerFileImpl;
 
-
+@SpringBootApplication
 public class ChallengeSoaintApplication {
-
-	public static void main(String[] args) {
-			
-		SpringApplication.run(ChallengeSoaintApplication.class, args);
-		
-		LoggerConsoleImpl consoleImpl = new LoggerConsoleImpl();
-		consoleImpl.loggerBuild("Hola Mundo");	
 	
-		LoggerFileImpl fileImpl = new LoggerFileImpl();
-		fileImpl.loggerBuild("Hola Mundo");	
+	public static void main(String[] args) {
+		SpringApplication.run(ChallengeSoaintApplication.class, args);	
+		LoggerConsoleImpl loggerConsoleImpl = new LoggerConsoleImpl();
+		loggerConsoleImpl.loggerBuild("Logger in console");
 		
-		System.out.println("Fin");
+		LoggerFileImpl loggerFileImpl = new LoggerFileImpl();
+		loggerFileImpl.loggerBuild("Logger in file");
+		
+		/*LoggerBddImpl loggerBddImpl = new LoggerBddImpl();
+		loggerBddImpl.loggerBuild("Logger in BD");*/
+
 	}
 
 }

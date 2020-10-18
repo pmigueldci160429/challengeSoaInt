@@ -4,12 +4,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class ConexionBD {
-	
-    private String servidor = "jdbc:mysql://localhost:3306/centralitabd";
-    private String username = "root";
-    private String password = "123456789";
-    private String driver = "com.mysql.jdbc.Driver";
+	@Value("${server}")
+    private String servidor;
+	@Value("${username}")
+    private String username;
+	@Value("${password}")
+    private String password;
+	@Value("${driver}")
+    private String driver;
 
     private Connection con;
 
